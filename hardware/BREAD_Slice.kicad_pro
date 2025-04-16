@@ -195,7 +195,6 @@
       ],
       "track_widths": [
         0.0,
-        0.4,
         0.5,
         1.0,
         1.5,
@@ -234,7 +233,7 @@
         },
         {
           "diameter": 0.5,
-          "drill": 0.25
+          "drill": 0.0
         },
         {
           "diameter": 1.0,
@@ -724,6 +723,10 @@
     [
       "66043bca-a260-4915-9fce-8a51d324c687",
       "Root"
+    ],
+    [
+      "d77b3886-6be2-441c-858f-c2061edd9591",
+      "ORP Amplifier"
     ]
   ],
   "text_variables": {}
