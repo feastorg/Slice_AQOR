@@ -2,13 +2,17 @@
 
 ## parts dump
 
-single pole press conn
-https://www.digikey.ca/en/products/detail/phoenix-contact/1751066/4482697
-https://www.mouser.ca/ProductDetail/Phoenix-Contact/1751066?qs=YjJcVSlHJPXF6y9LwP5Nnw%3D%3D
-https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-25-1-h-50-1751066
+- TL072HIDR op amp
+  - same as used in pH
+- TPS60400DBV
+  - same as used in pH
+- BNC connector
+  - same as used in pH
 
-buck inductor
-https://www.mouser.ca/ProductDetail/Bourns/1130-561K-RC?qs=VY5%2FUM8ph%2FMBak%2F%2FXWqo%2FA%3D%3D
+## references
 
-CRxx press fit terms
-https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-tdpt-4-2-sp-635-zb-1017521
+- pH robot ORP sensor meter
+  - https://www.dfrobot.com/product-1071.html
+  - https://dfimg.dfrobot.com/enshop/image/data/SEN0165/OPR%20meter%20V1.0%20Schematic.pdf
+  - https://dfimg.dfrobot.com/enshop/image/data/SEN0165/OPR%20meter%20V1.0%20layout.pdf
+  -
