@@ -5,7 +5,7 @@
 - TL072HIDR op amp
   - same as used in pH
 - TPS60400DBV
-  - same as used in pH
+  - same as used in pH and EC
 - BNC connector
   - same as used in pH
 
