@@ -2431,7 +2431,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kml-custom:03154311010"
+		(property "Footprint" "KMLib_Connectors:03154311010"
 			(at 53.34 -30.15 0)
 			(hide yes)
 			(show_name no)
