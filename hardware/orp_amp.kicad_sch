@@ -2701,7 +2701,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "75k"
+		(property "Value" "50k"
 			(at 146.05 74.9299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3781,7 +3781,7 @@
 				)
 			)
 		)
-		(property "Value" "30k"
+		(property "Value" "20k"
 			(at 163.83 76.2 90)
 			(show_name no)
 			(do_not_autoplace no)
