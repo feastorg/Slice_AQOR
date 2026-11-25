@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "filename": "orp_frontend.kicad_pro",
+    "version": 3
+  },
+  "schematic": {
+    "ngspice": {
+      "model_mode": 4
+    }
+  },
+  "sheets": [
+    [
+      "72ca4891-e139-4b64-aed1-0ba9e2e1eb95",
+      "Root"
+    ]
+  ]
+}

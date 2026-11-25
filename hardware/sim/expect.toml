@@ -1,0 +1,152 @@
+# Expected behaviour of the ORP front end, worked by hand from the schematic.
+#
+# U2A is a voltage follower on the BNC centre (J2 SIGNAL), so U2A_OUT = Vorp. C10 (1u)
+# loads its output directly. U2B is an inverting summer with its + input at GND:
+# ORP_IN = -(R3/R1) U2A_OUT - (R3/R2) (-5 V) = -Vorp + 5 * 30k/75k = 2.0 V - Vorp.
+# So +2000 mV reads 0 V, 0 mV reads 2.0 V, -2000 mV reads 4.0 V on the Nano's A0
+# (0.2048 ADC counts per mV on a 10-bit 0-5 V ADC). The 2.0 V offset scales with |-5V|.
+#
+# The probe is V3 behind R100 = 100 Mohm. The model's input bias current (JFET gate
+# leakage, ~35 pA) drops ~3.5 mV across it, which every reading carries; the rtols
+# below allow for it. A measure without `expect` is printed, not checked.
+#
+# Rail headroom: the SLOJ067 model clamps the output at VC/VE = 2.2 V plus a diode drop
+# inside each rail, about +/-3.45 V on +/-5 V. U2B's output reaches that first, at
+# Vorp of about -1.47 V. The model does not limit U2A's input common-mode range.
+
+mirrors = ["R1", "R2", "R3", "C10", "U201=U2", "U202=U2"]
+
+# DC: V3 (probe EMF) swept -2.5 .. +2.5 V, R100 = 100 Mohm.
+
+# 2.0 - 0 = 2.0 V
+[[measure]]
+name = "orp_at_0"
+analysis = "dc"
+meas = "find v(/orp_in) at=0"
+expect = 2.0
+rtol = 0.01
+
+# 2.0 - 1.0 = 1.0 V
+[[measure]]
+name = "orp_at_p1000"
+analysis = "dc"
+meas = "find v(/orp_in) at=1"
+expect = 1.0
+rtol = 0.01
+
+# 2.0 - 1.5 = 0.5 V
+[[measure]]
+name = "orp_at_p1500"
+analysis = "dc"
+meas = "find v(/orp_in) at=1.5"
+expect = 0.5
+rtol = 0.02
+
+# 2.0 - 2.49 = -0.49 V: above +2000 mV ORP_IN goes below 0 V, into A0 unclamped
+[[measure]]
+name = "orp_at_p2490"
+analysis = "dc"
+meas = "find v(/orp_in) at=2.49"
+expect = -0.49
+rtol = 0.02
+
+# 2.0 + 1.0 = 3.0 V
+[[measure]]
+name = "orp_at_m1000"
+analysis = "dc"
+meas = "find v(/orp_in) at=-1"
+expect = 3.0
+rtol = 0.01
+
+# 2.0 + 1.3 = 3.3 V, still below the model's output clamp
+[[measure]]
+name = "orp_at_m1300"
+analysis = "dc"
+meas = "find v(/orp_in) at=-1.3"
+expect = 3.3
+rtol = 0.01
+
+# Follower: U2A_OUT = Vorp = 1.0 V
+[[measure]]
+name = "u2a_at_p1000"
+analysis = "dc"
+meas = "find v(/u2a_out) at=1"
+expect = 1.0
+rtol = 0.01
+
+# Informational: by hand 2.0 + 2.0 = 4.0 V; the model clamps U2B near +3.45 V.
+# ngspice 44.2 gave 3.451 V.
+[[measure]]
+name = "orp_at_m2000"
+analysis = "dc"
+meas = "find v(/orp_in) at=-2"
+
+# Informational: the model's output ceiling (3.466 V at -2.5 V)
+[[measure]]
+name = "orp_ceiling"
+analysis = "dc"
+meas = "max v(/orp_in)"
+
+# Informational: the probe EMF at which ORP_IN reaches 3.4 V, where the model's clamp
+# starts to bend the line (by hand 2.0 - 3.4 = -1.4 V; ngspice gave -1.471 V)
+[[measure]]
+name = "orp_clip_emf"
+analysis = "dc"
+meas = "when v(/orp_in)=3.4"
+
+# Informational: U2A_OUT at 0 V EMF = -Ib * R100, the model's bias current (-3.49 mV)
+[[measure]]
+name = "u2a_bias_offset"
+analysis = "dc"
+meas = "find v(/u2a_out) at=0"
+
+# TRAN: V3 steps 0 -> 1 V at 1 ms.
+
+# Before the step: 2.0 V
+[[measure]]
+name = "tran_before"
+analysis = "tran"
+meas = "find v(/orp_in) at=0.9m"
+expect = 2.0
+rtol = 0.01
+
+# Settled, 8 ms after the step: 1.0 V
+[[measure]]
+name = "tran_settled"
+analysis = "tran"
+meas = "find v(/orp_in) at=9m"
+expect = 1.0
+rtol = 0.01
+
+# Informational: U2A rings with C10 on its output. Peak after the 1 V step (1.072 V)
+[[measure]]
+name = "tran_u2a_peak"
+analysis = "tran"
+meas = "max v(/u2a_out) from=1m to=10m"
+
+# Informational: ringing still left 1 ms after the step (29 mV pp in ngspice 44.2)
+[[measure]]
+name = "tran_ring_1ms"
+analysis = "tran"
+meas = "pp v(/u2a_out) from=2m to=2.2m"
+
+# AC about 0 V EMF: |ORP_IN / Vorp| = R3/R1 = 1.0 at 1 Hz
+[[measure]]
+name = "ac_gain_1hz"
+analysis = "ac"
+meas = "find vm(/orp_in) at=1"
+expect = 1.0
+rtol = 0.01
+
+# Informational: follower peaking from C10 (90x at 60 kHz in ngspice 44.2). A
+# well-damped follower peaks at no more than about 1.5x.
+[[measure]]
+name = "ac_u2a_peak"
+analysis = "ac"
+meas = "max vm(/u2a_out)"
+
+# Informational: last -3 dB crossing of the chain
+[[measure]]
+name = "ac_f3db"
+analysis = "ac"
+meas = "when vm(/orp_in)=0.7071 fall=last"
