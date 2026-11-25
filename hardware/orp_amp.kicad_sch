@@ -2300,6 +2300,137 @@
 		(uuid "c8cae105-fae6-4ce8-b666-ceb9fc5946fa")
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 163.83 85.09 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "02fc6186-a315-4601-90c9-7d2ec5bf19ae")
+		(property "Reference" "C14"
+			(at 163.83 92.075 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150n"
+			(at 163.83 89.535 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 163.83 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 163.83 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f561c9b8-16ea-4a18-baa8-a82bc6447006")
+		)
+		(pin "2"
+			(uuid "d9a0aefa-2a25-4414-ba4d-bc97ad6b74f7")
+		)
+		(instances
+			(project "BREAD_Slice"
+				(path "/66043bca-a260-4915-9fce-8a51d324c687/d77b3886-6be2-441c-858f-c2061edd9591"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 153.67 72.39) (xy 153.67 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce1960e1-2d2d-434e-9fbd-02d147add29f")
+	)
+	(wire
+		(pts
+			(xy 153.67 85.09) (xy 160.02 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1c7cae9-cbee-411a-9758-ff67ad40a1c7")
+	)
+	(wire
+		(pts
+			(xy 167.64 85.09) (xy 175.26 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f23ad3b-b5c3-4d4d-a3fb-513c31f4fb92")
+	)
+	(wire
+		(pts
+			(xy 175.26 85.09) (xy 175.26 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2526b7b6-bfbc-4757-bba0-e2b0433e0f93")
+	)
+	(junction
+		(at 153.67 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "327e42c7-8e11-4879-973f-60b5a9b8dc29")
+	)
+	(junction
+		(at 175.26 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c5401aeb-f5a9-42eb-97f6-d9d16db470d3")
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:TL072")
 		(at 68.58 127 0)
 		(unit 3)
@@ -3394,7 +3525,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "9c748e96-99ca-4b8b-8423-e0690b939562")
 		(property "Reference" "C10"
 			(at 119.38 78.7399 0)
