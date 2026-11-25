@@ -2596,7 +2596,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.nexperia.com/product/BAT54"
 			(at 200.66 67.31 0)
 			(hide yes)
 			(show_name no)
