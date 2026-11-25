@@ -2837,16 +2837,14 @@
 		(descr "<h3>WS2812B</h3>\n\n<p>Specifications:\n<ul><li>Pin count: 4</li>\n<li>Size: 5.0 x 5.0 mm</li>\n</ul></p>\n<p><b>Datasheet referenced for footprint:</b> <a href=\"http://cdn.sparkfun.com/datasheets/BreakoutBoards/WS2812B.pdf\">WS2812B</a></p>\n<p>Example device:\n<ul><li>WS2812B</li>")
 		(tags "SparkFun")
 		(property "Reference" "D1"
-			(at 0 -2.794 0)
-			(layer "F.Fab")
+			(at 5.3 -1.2828 0)
+			(layer "F.SilkS")
 			(uuid "546ad388-f909-46e2-a6fd-295d602c3f9e")
 			(effects
 				(font
-					(size 0.5 0.5)
-					(thickness 0.1)
-					(bold yes)
+					(size 0.8 0.8)
+					(thickness 0.12)
 				)
-				(justify bottom)
 			)
 		)
 		(property "Value" "WS2812B_5050"
@@ -3332,7 +3330,7 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C9"
-			(at -2.333001 -1.68 135)
+			(at -2.3688 -1.3152 135)
 			(layer "F.SilkS")
 			(uuid "59484fa2-641a-4ae0-a757-8d28b963fde5")
 			(effects
@@ -5093,13 +5091,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C8"
-			(at 0 -1.68 0)
+			(at -2.3975 0.5 0)
 			(layer "F.SilkS")
 			(uuid "6bde4dff-0a7f-42c4-86fb-77f674dc3855")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
+					(thickness 0.12)
 				)
 			)
 		)
@@ -5293,13 +5291,13 @@
 		(descr "031-5431-1010-1")
 		(tags "Connector")
 		(property "Reference" "J2"
-			(at -1.27 -16 90)
+			(at 1.975 2.35 90)
 			(layer "F.SilkS")
 			(uuid "7829943e-61e3-4603-b034-de2021165a2c")
 			(effects
 				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -6445,7 +6443,7 @@
 		(descr "SOIC, 8 Pin (JEDEC MS-012AA, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_narrow-r/r_8.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOIC SO")
 		(property "Reference" "U2"
-			(at 0.9 1.45 90)
+			(at -4.3 -1.605 0)
 			(layer "F.SilkS")
 			(uuid "cdea94bc-3583-449b-b27b-0ac4ee74c94d")
 			(effects
@@ -6918,13 +6916,13 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C5"
-			(at 2.55 -0.43 0)
+			(at 2.595 -0.245 45)
 			(layer "F.SilkS")
 			(uuid "90517fc0-5132-466e-afc0-bef65420a305")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
+					(thickness 0.12)
 				)
 			)
 		)
