@@ -2244,7 +2244,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "50k"
+		(property "Value" "49.9k"
 			(at 123.19 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2303,7 +2303,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Params" "r=50k"
+		(property "Sim.Params" "r=49.9k"
 			(at 123.19 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -3107,7 +3107,7 @@
 		(at 215.90 91.44 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
@@ -3159,7 +3159,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "SUBCKT"
 			(at 219.71 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -3171,7 +3171,31 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
+		(property "Sim.Library" "models/bat54.lib"
+			(at 219.71 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Name" "BAT54"
+			(at 219.71 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=2 2=1"
 			(at 219.71 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -3297,7 +3321,593 @@
 			)
 		)
 	)
-	(text "AQOR ORP front-end test bench (simulation only; nothing here is on the board).\nMirrors hardware/orp_amp.kicad_sch: same refs and values for R1-R4, C14 and D2 (C10 is DNP there, so absent here);\nU201/U202 are U2 sections A/B (TL072HIDR; simulated with the TI SLOJ067 TL072 macromodel in models/).\nStimulus: V1/V2 stand in for +5V and the TPS60400 -5V rail (ideal);\nV3 + R100 are the ORP probe: an EMF behind 100 Mohm, on the BNC centre (J2 SIGNAL). SW2 open.\nORP_IN goes to the Nano's A0 (A1 pin 19), through R4.\nD2 is excluded from simulation: no BAT54 vendor model in models/ (the maker's page refused the download).\nChecks: expect.toml, run by check.py."
+	(symbol
+		(lib_id "Simulation_SPICE:VDC")
+		(at 25.40 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b6edf6ea-8efd-5840-82bb-daaca71e0397")
+		(property "Reference" "V4"
+			(at 29.21 139.70 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "U2B_OUT fault"
+			(at 29.21 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 29.21 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Device" "V"
+			(at 29.21 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Type" "DC"
+			(at 29.21 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 29.21 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Params" "dc=-4.8"
+			(at 29.21 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c1301226-d06c-530a-abe7-cafe79b3809f")
+		)
+		(pin "2"
+			(uuid "1c1a0dff-59a5-5bc0-a412-77bbf6c922f4")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "V4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 25.40 137.16) (xy 25.40 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da7cb296-9fd3-5eff-87a2-49f75a86a771")
+	)
+	(label "U2B_FAULT"
+		(at 25.40 134.62 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "30bcd862-d581-5706-a4b4-0acb250af2b4")
+	)
+	(wire
+		(pts
+			(xy 25.40 147.32) (xy 25.40 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "619a6043-5164-5e87-a081-300a8f5979c6")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 25.40 149.86 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "592307f4-eab1-5df7-897c-fee545e5d271")
+		(property "Reference" "#PWR006"
+			(at 29.21 147.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 29.21 152.40 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 29.21 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c7b273a6-e8e5-5d27-9d48-0fee2e488dc9")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "#PWR006")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 50.80 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0365ad22-721a-559b-8474-8f8749d8d6c4")
+		(property "Reference" "R104"
+			(at 54.61 139.70 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 54.61 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Device" "R"
+			(at 54.61 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 54.61 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Params" "r=4.7k"
+			(at 54.61 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c0807133-62dd-547e-ae59-5842f9d4b8fc")
+		)
+		(pin "2"
+			(uuid "2d8e19bc-c59c-50bd-8c53-28cd668b9ff7")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "R104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.80 138.43) (xy 50.80 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ce3e785-9dbc-56e7-b720-318b351d519d")
+	)
+	(label "U2B_FAULT"
+		(at 50.80 135.89 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "df7788ab-f800-54a7-b7b7-4c7539c55084")
+	)
+	(wire
+		(pts
+			(xy 50.80 146.05) (xy 50.80 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6189f1d0-9bf3-579b-be02-892c331b1f96")
+	)
+	(label "A0_FAULT"
+		(at 50.80 148.59 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7816ad90-62b6-5c42-bc7d-7d30181a819c")
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 76.20 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "03980afb-577c-5839-9e2b-82ee374793d2")
+		(property "Reference" "D102"
+			(at 80.01 139.70 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BAT54"
+			(at 80.01 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Device" "SUBCKT"
+			(at 80.01 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Library" "models/bat54.lib"
+			(at 80.01 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Name" "BAT54"
+			(at 80.01 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=2 2=1"
+			(at 80.01 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "30f2e013-e51a-58a6-9fa6-ad7094f54eb5")
+		)
+		(pin "2"
+			(uuid "55c35fff-0736-5366-9a79-1418dac0c0fa")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "D102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 72.39 142.24) (xy 69.85 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53ac55e2-9dba-5599-9a3c-cd7844655beb")
+	)
+	(label "A0_FAULT"
+		(at 69.85 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "069f8b0d-dd23-5d19-abf0-325892f54783")
+	)
+	(wire
+		(pts
+			(xy 80.01 142.24) (xy 82.55 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0710fb3-ad0b-563f-914f-b0e388cd1400")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 82.55 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "82432717-03ba-54e8-b940-234bac4b81f7")
+		(property "Reference" "#PWR007"
+			(at 86.36 139.70 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "31862be6-8244-5eb2-93e7-8276eb1edef2")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "#PWR007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "AQOR ORP front-end test bench (simulation only; nothing here is on the board).\nMirrors hardware/orp_amp.kicad_sch: same refs and values for R1-R4, C14 and D2 (C10 is DNP there, so absent here);\nR104/D102 copy R4/D2 for the fault case: V4 holds U2B_OUT at -4.8 V (U2B saturated negative);\nU201/U202 are U2 sections A/B (TL072HIDR; simulated with the TI SLOJ067 TL072 macromodel in models/).\nStimulus: V1/V2 stand in for +5V and the TPS60400 -5V rail (ideal);\nV3 + R100 are the ORP probe: an EMF behind 100 Mohm, on the BNC centre (J2 SIGNAL). SW2 open.\nORP_IN goes to the Nano's A0 (A1 pin 19), through R4.\nD2/D102 use the Nexperia BAT54 SPICE model (models/bat54.lib).\nChecks: expect.toml, run by check.py."
 		(exclude_from_sim yes)
 		(at 25.4 165.1 0)
 		(effects
@@ -3306,7 +3916,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "c1301226-d06c-530a-abe7-cafe79b3809f")
+		(uuid "89188b5f-ceb1-5a40-b500-e8d20734f809")
 	)
 	(sheet_instances
 		(path "/"

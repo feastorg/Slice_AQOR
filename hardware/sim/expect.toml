@@ -2,75 +2,81 @@
 #
 # U2A is a voltage follower on the BNC centre (J2 SIGNAL), so U2A_OUT = Vorp. C10 on its
 # output is DNP. U2B is an inverting summer with its + input at GND and C14 across R3:
-# U2B_OUT = -(R3/R1) U2A_OUT - (R3/R2) (-5 V) = 2.0 V - (20k/30k) Vorp = 2.0 - 0.6667 Vorp,
+# U2B_OUT = -(R3/R1) U2A_OUT - (R3/R2) (-5 V) = 5 * 20k/49.9k - (20k/30k) Vorp
+#         = 2.0040 - 0.6667 Vorp,
 # low-passed at f = 1 / (2 pi R3 C14) = 1 / (2 pi 20k 150n) = 53.05 Hz (tau = 3.0 ms).
-# R4 (4.7k) carries no current into the ADC, so ORP_IN (A0) = U2B_OUT.
-# So +2000 mV reads 0.667 V, 0 mV reads 2.0 V, -2000 mV reads 3.333 V on the Nano's A0
-# (0.1365 ADC counts per mV on a 10-bit 0-5 V ADC). The 2.0 V offset scales with |-5V|.
+# ORP_IN (A0) = U2B_OUT less R4 (4.7k) times D2's reverse leakage (below 2 mV).
+# So +2000 mV reads 0.671 V, 0 mV reads 2.004 V, -2000 mV reads 3.337 V on the Nano's A0
+# (0.1365 ADC counts per mV on a 10-bit 0-5 V ADC). The 2.004 V offset scales with |-5V|.
 #
 # The probe is V3 behind R100 = 100 Mohm. The model's input bias current (JFET gate
 # leakage, ~35 pA) drops ~3.5 mV across it, so every ORP_IN reading carries
-# +0.6667 * 3.5 = +2.3 mV; the rtols below allow for it. A measure without `expect` is
-# printed, not checked.
+# +0.6667 * 3.5 = +2.3 mV, and D2's leakage takes off ~1.5-1.9 mV; the rtols allow both.
+# A measure without `expect` is printed, not checked.
 #
-# D2 (BAT54, A0 to GND) is on the bench but excluded from simulation: there is no vendor
-# BAT54 model in models/. Across the span ORP_IN stays >= 0.33 V, so D2 is reverse-biased
-# and its clamp is not exercised; its leakage is not modelled.
+# D2 is the Nexperia BAT54 model (models/bat54.lib: a diode with IS = 2.117e-7, N = 1,
+# RS = 2.7, in parallel with 18 Mohm). Reverse leakage at VR: VR / 18M + IS.
+#
+# Fault case (V4, R104, D102: copies of R4 and D2): U2B's output held at -4.8 V, as when
+# U2B saturates negative. Clamp current I = (4.8 - Vd) / 4.7k with
+# Vd = Vt ln(I / IS) + I RS, Vt = 25.86 mV at 27 C: I = 0.9743 mA, Vd = 0.2208 V, so A0
+# sits at -0.221 V, above the ATmega328P's -0.5 V limit. The data sheet's maximum VF at
+# 1 mA is 320 mV (BAT54, 1 July 2022, p. 3): A0 >= -0.32 V worst case.
 #
 # Rail headroom: the SLOJ067 model clamps the output at VC/VE = 2.2 V plus a diode drop
-# inside each rail, about +/-3.45 V on +/-5 V. U2B's highest output, 3.333 V at -2000 mV,
+# inside each rail, about +/-3.45 V on +/-5 V. U2B's highest output, 3.337 V at -2000 mV,
 # sits just under it. The model does not limit U2A's input common-mode range.
 
-mirrors = ["R1", "R2", "R3", "R4", "C14", "D2", "U201=U2", "U202=U2"]
+mirrors = ["R1", "R2", "R3", "R4", "C14", "D2", "R104=R4", "D102=D2", "U201=U2", "U202=U2"]
 
-# DC: V3 (probe EMF) swept -2.5 .. +2.5 V, R100 = 100 Mohm.
+# DC: V3 (probe EMF) swept -2.5 .. +2.5 V, R100 = 100 Mohm. V4 is a fixed -4.8 V.
 
-# 2.0 - 0.6667 * 0 = 2.0 V
+# 2.0040 - 0.6667 * 0 = 2.0040 V
 [[measure]]
 name = "orp_at_0"
 analysis = "dc"
 meas = "find v(/orp_in) at=0"
-expect = 2.0
+expect = 2.004
 rtol = 0.01
 
-# 2.0 - 0.6667 * 1.0 = 1.3333 V
+# 2.0040 - 0.6667 * 1.0 = 1.3373 V
 [[measure]]
 name = "orp_at_p1000"
 analysis = "dc"
 meas = "find v(/orp_in) at=1"
-expect = 1.3333
+expect = 1.3373
 rtol = 0.01
 
-# 2.0 - 0.6667 * 2.0 = 0.6667 V, the bottom of the span
+# 2.0040 - 0.6667 * 2.0 = 0.6707 V, the bottom of the span
 [[measure]]
 name = "orp_at_p2000"
 analysis = "dc"
 meas = "find v(/orp_in) at=2"
-expect = 0.6667
+expect = 0.6707
 rtol = 0.01
 
-# 2.0 - 0.6667 * 2.49 = 0.34 V: past the span A0 still stays above 0 V
+# 2.0040 - 0.6667 * 2.49 = 0.344 V: past the span A0 still stays above 0 V
 [[measure]]
 name = "orp_at_p2490"
 analysis = "dc"
 meas = "find v(/orp_in) at=2.49"
-expect = 0.34
+expect = 0.344
 rtol = 0.02
 
-# 2.0 + 0.6667 * 1.0 = 2.6667 V
+# 2.0040 + 0.6667 * 1.0 = 2.6707 V
 [[measure]]
 name = "orp_at_m1000"
 analysis = "dc"
 meas = "find v(/orp_in) at=-1"
-expect = 2.6667
+expect = 2.6707
 rtol = 0.01
 
-# 2.0 + 0.6667 * 2.0 = 3.3333 V, the top of the span
+# 2.0040 + 0.6667 * 2.0 = 3.3373 V, the top of the span
 [[measure]]
 name = "orp_at_m2000"
 analysis = "dc"
 meas = "find v(/orp_in) at=-2"
-expect = 3.3333
+expect = 3.3373
 rtol = 0.01
 
 # Follower: U2A_OUT = Vorp = 1.0 V
@@ -81,15 +87,30 @@ meas = "find v(/u2a_out) at=1"
 expect = 1.0
 rtol = 0.01
 
-# No DC drop across R4: U2B_OUT = ORP_IN = 1.3333 V at +1000 mV
+# U2B_OUT at +1000 mV: 1.3373 V
 [[measure]]
 name = "u2b_at_p1000"
 analysis = "dc"
 meas = "find v(/u2b_out) at=1"
-expect = 1.3333
+expect = 1.3373
 rtol = 0.01
 
-# Informational: the model's output ceiling (by hand 2.0 + 0.6667 * 2.5 = 3.667 V; the
+# Informational: D2's leakage offset at A0 is U2B_OUT - ORP_IN = 4.7k * (VR / 18M + IS):
+# by hand 1.35 mV at +1000 mV (VR = 1.337 V; compare u2b_at_p1000 with orp_at_p1000),
+# 1.52 mV at 0 mV (VR = 2.004 V), 1.87 mV at -2000 mV (VR = 3.337 V, 0.38 ADC counts).
+# U2B_OUT at 0 mV, to subtract orp_at_0 from
+[[measure]]
+name = "u2b_at_0"
+analysis = "dc"
+meas = "find v(/u2b_out) at=0"
+
+# U2B_OUT at -2000 mV, to subtract orp_at_m2000 from
+[[measure]]
+name = "u2b_at_m2000"
+analysis = "dc"
+meas = "find v(/u2b_out) at=-2"
+
+# Informational: the model's output ceiling (by hand 2.0040 + 0.6667 * 2.5 = 3.671 V; the
 # model clamps near 3.45 V)
 [[measure]]
 name = "orp_ceiling"
@@ -97,7 +118,7 @@ analysis = "dc"
 meas = "max v(/orp_in)"
 
 # Informational: the probe EMF at which ORP_IN reaches 3.4 V, where the model's clamp
-# starts to bend the line (by hand (2.0 - 3.4) / 0.6667 = -2.1 V)
+# starts to bend the line (by hand (2.0040 - 3.4) / 0.6667 = -2.094 V)
 [[measure]]
 name = "orp_clip_emf"
 analysis = "dc"
@@ -109,31 +130,47 @@ name = "u2a_bias_offset"
 analysis = "dc"
 meas = "find v(/u2a_out) at=0"
 
+# Fault: A0 with U2B's output at -4.8 V: -Vd = -0.2208 V (above -0.5 V)
+[[measure]]
+name = "fault_a0"
+analysis = "dc"
+meas = "find v(/a0_fault) at=0"
+expect = -0.2208
+rtol = 0.02
+
+# Fault: clamp current through R104 and D102 into V4's + terminal: 0.9743 mA
+[[measure]]
+name = "fault_clamp_current"
+analysis = "dc"
+meas = "find i(v4) at=0"
+expect = 0.9743e-3
+rtol = 0.01
+
 # TRAN: V3 steps 0 -> 1 V at 1 ms.
 
-# Before the step: 2.0 V
+# Before the step: 2.0040 V
 [[measure]]
 name = "tran_before"
 analysis = "tran"
 meas = "find v(/orp_in) at=0.9m"
-expect = 2.0
+expect = 2.004
 rtol = 0.01
 
 # One time constant after the step (tau = R3 C14 = 3.0 ms):
-# 2.0 - 0.6667 * (1 - e^-1) = 2.0 - 0.4214 = 1.5786 V
+# 2.0040 - 0.6667 * (1 - e^-1) = 2.0040 - 0.4214 = 1.5826 V
 [[measure]]
 name = "tran_tau"
 analysis = "tran"
 meas = "find v(/orp_in) at=4m"
-expect = 1.5786
+expect = 1.5826
 rtol = 0.01
 
-# Settled, 24 ms (8 tau) after the step: 1.3333 V
+# Settled, 24 ms (8 tau) after the step: 1.3373 V
 [[measure]]
 name = "tran_settled"
 analysis = "tran"
 meas = "find v(/orp_in) at=25m"
-expect = 1.3333
+expect = 1.3373
 rtol = 0.01
 
 # Follower peak after the 1 V step: by hand 1.0 V, no overshoot without C10. With C10 it
@@ -152,7 +189,7 @@ analysis = "tran"
 meas = "pp v(/u2a_out) from=2m to=2.2m"
 
 # Informational: ORP_IN's lowest point after the step; a first-order low-pass does not
-# undershoot, so by hand 1.3333 V
+# undershoot, so by hand 1.3373 V
 [[measure]]
 name = "tran_orp_min"
 analysis = "tran"
