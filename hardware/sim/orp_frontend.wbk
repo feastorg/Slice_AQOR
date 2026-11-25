@@ -33,7 +33,7 @@
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 1u 10m 0 1u",
+        ".tran 1u 30m 0 10u",
         ".kicad adjustpaths",
         ".save all"
       ],

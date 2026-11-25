@@ -2075,213 +2075,6 @@
 		(uuid "1d95099a-9f27-5544-bc6c-4ebc6d4b9784")
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 101.60 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "813923b5-a74b-507d-aaa6-e2168755d22d")
-		(property "Reference" "C10"
-			(at 105.41 101.60 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1u"
-			(at 105.41 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 105.41 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Sim.Device" "C"
-			(at 105.41 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Sim.Pins" "1=+ 2=-"
-			(at 105.41 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Sim.Params" "c=1u"
-			(at 105.41 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "1d642d4a-2797-5aa5-9154-9c1e8719c29a")
-		)
-		(pin "2"
-			(uuid "d0a929e9-8720-5dc8-8ffc-bc8b8312a99d")
-		)
-		(instances
-			(project "orp_frontend"
-				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
-					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 101.60 100.33) (xy 101.60 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7762876-441b-5171-8a6f-790105dcef15")
-	)
-	(label "U2A_OUT"
-		(at 101.60 97.79 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6c2f55e0-cbaf-5e84-8ee7-2ee01ed286c4")
-	)
-	(wire
-		(pts
-			(xy 101.60 107.95) (xy 101.60 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "816ddbb2-6f61-57f3-a057-52aca8f3bed3")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 101.60 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "162dd1f3-a8dd-5078-b8cb-0383046e677d")
-		(property "Reference" "#PWR004"
-			(at 105.41 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GND"
-			(at 105.41 113.03 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 105.41 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "23b64ffd-8773-59e9-bfd0-cf79f639f5af")
-		)
-		(instances
-			(project "orp_frontend"
-				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
-					(reference "#PWR004")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 119.38 91.44 0)
 		(unit 1)
@@ -2291,7 +2084,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "80f1cc15-d4c2-5643-af5f-70d22a627d2a")
+		(uuid "813923b5-a74b-507d-aaa6-e2168755d22d")
 		(property "Reference" "R1"
 			(at 123.19 88.90 0)
 			(show_name no)
@@ -2375,10 +2168,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b350e8d8-59d4-5905-818f-b9c9dd732bee")
+			(uuid "1d642d4a-2797-5aa5-9154-9c1e8719c29a")
 		)
 		(pin "2"
-			(uuid "fc1a8d3e-8a65-505c-a7e0-176cc2e66f6f")
+			(uuid "d0a929e9-8720-5dc8-8ffc-bc8b8312a99d")
 		)
 		(instances
 			(project "orp_frontend"
@@ -2397,7 +2190,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "657c14f0-98cd-51e0-9c77-01db98e7ef9b")
+		(uuid "f7762876-441b-5171-8a6f-790105dcef15")
 	)
 	(label "U2A_OUT"
 		(at 119.38 85.09 90)
@@ -2407,7 +2200,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3279c9ff-6cc2-5790-85a8-a1dd3d1bda37")
+		(uuid "6c2f55e0-cbaf-5e84-8ee7-2ee01ed286c4")
 	)
 	(wire
 		(pts
@@ -2417,7 +2210,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6113d1c2-a03a-54e9-86ac-e7efa57b2077")
+		(uuid "816ddbb2-6f61-57f3-a057-52aca8f3bed3")
 	)
 	(label "U2B_N"
 		(at 119.38 97.79 270)
@@ -2427,7 +2220,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "88a379af-7ab3-5690-8c4d-95d9aa661d74")
+		(uuid "23b64ffd-8773-59e9-bfd0-cf79f639f5af")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2439,7 +2232,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "85c5c613-52e1-5cf9-8e47-8a02bd28a9c7")
+		(uuid "fc1a8d3e-8a65-505c-a7e0-176cc2e66f6f")
 		(property "Reference" "R2"
 			(at 123.19 114.30 0)
 			(show_name no)
@@ -2451,7 +2244,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "75k"
+		(property "Value" "50k"
 			(at 123.19 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2510,7 +2303,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Params" "r=75k"
+		(property "Sim.Params" "r=50k"
 			(at 123.19 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -2523,10 +2316,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4d106e72-bd16-581c-a8ff-ece2bf7134f5")
+			(uuid "162dd1f3-a8dd-5078-b8cb-0383046e677d")
 		)
 		(pin "2"
-			(uuid "5d8ebaf5-1f35-536e-a53d-8b74249d4608")
+			(uuid "b350e8d8-59d4-5905-818f-b9c9dd732bee")
 		)
 		(instances
 			(project "orp_frontend"
@@ -2545,7 +2338,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "68b1fd02-5e7c-5712-9d9c-73b3060ebcb4")
+		(uuid "80f1cc15-d4c2-5643-af5f-70d22a627d2a")
 	)
 	(label "-5V"
 		(at 119.38 110.49 90)
@@ -2555,7 +2348,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "993e8166-8bb1-5757-860c-6d8288083c78")
+		(uuid "657c14f0-98cd-51e0-9c77-01db98e7ef9b")
 	)
 	(wire
 		(pts
@@ -2565,7 +2358,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ed01aa18-57a9-55e5-be5e-1c6b32a2c128")
+		(uuid "3279c9ff-6cc2-5790-85a8-a1dd3d1bda37")
 	)
 	(label "U2B_N"
 		(at 119.38 123.19 270)
@@ -2575,7 +2368,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "cb572bed-8ed1-5ecb-8fc5-47082db71f2c")
+		(uuid "6113d1c2-a03a-54e9-86ac-e7efa57b2077")
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:OPAMP")
@@ -2587,7 +2380,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "1b00ea19-d4cb-5da2-abca-c77edb3998c3")
+		(uuid "993e8166-8bb1-5757-860c-6d8288083c78")
 		(property "Reference" "U202"
 			(at 148.59 88.90 0)
 			(show_name no)
@@ -2683,19 +2476,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "527281f5-0049-54ed-abbd-10b210ffe05b")
+			(uuid "88a379af-7ab3-5690-8c4d-95d9aa661d74")
 		)
 		(pin "2"
-			(uuid "8b8502cc-59f0-59f4-b190-bb2d872ec8eb")
+			(uuid "4d106e72-bd16-581c-a8ff-ece2bf7134f5")
 		)
 		(pin "3"
-			(uuid "b3f5bfc4-4499-5f1e-9c53-0150b77772cb")
+			(uuid "5d8ebaf5-1f35-536e-a53d-8b74249d4608")
 		)
 		(pin "4"
-			(uuid "6f5a50ba-f5fc-57d1-ad10-5a93010e17d0")
+			(uuid "85c5c613-52e1-5cf9-8e47-8a02bd28a9c7")
 		)
 		(pin "5"
-			(uuid "2af105ae-481e-5781-a70c-3e413b6e5e0e")
+			(uuid "68b1fd02-5e7c-5712-9d9c-73b3060ebcb4")
 		)
 		(instances
 			(project "orp_frontend"
@@ -2714,7 +2507,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "44d1a8db-9412-5188-924c-b7c59b4e39b1")
+		(uuid "ed01aa18-57a9-55e5-be5e-1c6b32a2c128")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2726,8 +2519,8 @@
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "cead8163-efd5-5f9c-a833-8cef3e726c8f")
-		(property "Reference" "#PWR005"
+		(uuid "527281f5-0049-54ed-abbd-10b210ffe05b")
+		(property "Reference" "#PWR004"
 			(at 138.43 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2774,12 +2567,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "671cf7ec-7239-553c-a5fa-1ac681570aa3")
+			(uuid "cb572bed-8ed1-5ecb-8fc5-47082db71f2c")
 		)
 		(instances
 			(project "orp_frontend"
 				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
-					(reference "#PWR005")
+					(reference "#PWR004")
 					(unit 1)
 				)
 			)
@@ -2793,7 +2586,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b04aaff8-d105-5f07-bbfd-2b7abec7ea39")
+		(uuid "8b8502cc-59f0-59f4-b190-bb2d872ec8eb")
 	)
 	(label "U2B_N"
 		(at 134.62 93.98 180)
@@ -2803,7 +2596,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "af0abe2f-278d-5f93-bd68-3cf7de2eb876")
+		(uuid "b3f5bfc4-4499-5f1e-9c53-0150b77772cb")
 	)
 	(wire
 		(pts
@@ -2813,7 +2606,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b6acd442-e898-5c51-ab76-83c5b4ecb64e")
+		(uuid "6f5a50ba-f5fc-57d1-ad10-5a93010e17d0")
 	)
 	(label "+5V"
 		(at 142.24 81.28 90)
@@ -2823,7 +2616,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "579fa5f8-3f1c-58c9-8caa-b44ad3a98909")
+		(uuid "2af105ae-481e-5781-a70c-3e413b6e5e0e")
 	)
 	(wire
 		(pts
@@ -2833,7 +2626,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9bcfea17-1dfb-567b-acc9-698f5d515f15")
+		(uuid "1b00ea19-d4cb-5da2-abca-c77edb3998c3")
 	)
 	(label "-5V"
 		(at 142.24 101.60 270)
@@ -2843,7 +2636,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f291fc4d-b9a8-5fea-a3d7-eb84736f34e5")
+		(uuid "44d1a8db-9412-5188-924c-b7c59b4e39b1")
 	)
 	(wire
 		(pts
@@ -2853,9 +2646,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2825f946-52b8-5407-bde4-25b7dcde9c63")
+		(uuid "671cf7ec-7239-553c-a5fa-1ac681570aa3")
 	)
-	(label "ORP_IN"
+	(label "U2B_OUT"
 		(at 154.94 91.44 0)
 		(effects
 			(font
@@ -2863,7 +2656,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1866d5ce-7cea-5e87-a93a-c4c9153c8321")
+		(uuid "cead8163-efd5-5f9c-a833-8cef3e726c8f")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2875,7 +2668,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "a79c3fb0-c129-5ff2-a9ba-52edb66014b4")
+		(uuid "b6acd442-e898-5c51-ab76-83c5b4ecb64e")
 		(property "Reference" "R3"
 			(at 168.91 88.90 0)
 			(show_name no)
@@ -2887,7 +2680,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "30k"
+		(property "Value" "20k"
 			(at 168.91 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2946,7 +2739,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Params" "r=30k"
+		(property "Sim.Params" "r=20k"
 			(at 168.91 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -2959,10 +2752,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7aa998b-1846-59c0-aac0-9b19fb8a0122")
+			(uuid "b04aaff8-d105-5f07-bbfd-2b7abec7ea39")
 		)
 		(pin "2"
-			(uuid "6fb6d7a7-7aa6-589e-b0cd-a72fe64e7631")
+			(uuid "af0abe2f-278d-5f93-bd68-3cf7de2eb876")
 		)
 		(instances
 			(project "orp_frontend"
@@ -2981,9 +2774,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "00ca5262-e21b-5e69-8d30-7576ecaba7b3")
+		(uuid "579fa5f8-3f1c-58c9-8caa-b44ad3a98909")
 	)
-	(label "ORP_IN"
+	(label "U2B_OUT"
 		(at 165.10 85.09 90)
 		(effects
 			(font
@@ -2991,7 +2784,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d4127ae0-b434-57b2-a360-50d743d036ce")
+		(uuid "9bcfea17-1dfb-567b-acc9-698f5d515f15")
 	)
 	(wire
 		(pts
@@ -3001,7 +2794,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4e626b2f-dcf8-5669-96ce-66f20ddca15f")
+		(uuid "f291fc4d-b9a8-5fea-a3d7-eb84736f34e5")
 	)
 	(label "U2B_N"
 		(at 165.10 97.79 270)
@@ -3011,9 +2804,500 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4e9cc047-1e2a-5903-ac4e-610295eaa53f")
+		(uuid "2825f946-52b8-5407-bde4-25b7dcde9c63")
 	)
-	(text "AQOR ORP front-end test bench (simulation only; nothing here is on the board).\nMirrors hardware/orp_amp.kicad_sch: same refs and values for R1-R3 and C10;\nU201/U202 are U2 sections A/B (TL072HIDR; simulated with the TI SLOJ067 TL072 macromodel in models/).\nStimulus: V1/V2 stand in for +5V and the TPS60400 -5V rail (ideal);\nV3 + R100 are the ORP probe: an EMF behind 100 Mohm, on the BNC centre (J2 SIGNAL). SW2 open.\nORP_IN goes to the Nano's A0 (A1 pin 19).\nChecks: expect.toml, run by check.py."
+	(symbol
+		(lib_id "Device:C")
+		(at 165.10 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6fb6d7a7-7aa6-589e-b0cd-a72fe64e7631")
+		(property "Reference" "C14"
+			(at 168.91 114.30 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "150n"
+			(at 168.91 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 168.91 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 168.91 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Device" "C"
+			(at 168.91 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 168.91 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Params" "c=150n"
+			(at 168.91 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "1866d5ce-7cea-5e87-a93a-c4c9153c8321")
+		)
+		(pin "2"
+			(uuid "f7aa998b-1846-59c0-aac0-9b19fb8a0122")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 165.10 113.03) (xy 165.10 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a79c3fb0-c129-5ff2-a9ba-52edb66014b4")
+	)
+	(label "U2B_N"
+		(at 165.10 110.49 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "00ca5262-e21b-5e69-8d30-7576ecaba7b3")
+	)
+	(wire
+		(pts
+			(xy 165.10 120.65) (xy 165.10 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4127ae0-b434-57b2-a360-50d743d036ce")
+	)
+	(label "U2B_OUT"
+		(at 165.10 123.19 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4e626b2f-dcf8-5669-96ce-66f20ddca15f")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 190.50 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b7fc5568-317f-5d63-95a1-fd7e34d2bbf1")
+		(property "Reference" "R4"
+			(at 194.31 88.90 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 194.31 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Device" "R"
+			(at 194.31 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 194.31 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Params" "r=4.7k"
+			(at 194.31 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "4e9cc047-1e2a-5903-ac4e-610295eaa53f")
+		)
+		(pin "2"
+			(uuid "39a257dc-ee92-5fa1-8bb6-404233ddab36")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 190.50 87.63) (xy 190.50 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f873b576-013a-5b3d-8e8d-a39d0cc75fdd")
+	)
+	(label "U2B_OUT"
+		(at 190.50 85.09 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "09f35049-9398-5958-a6db-39409027a91d")
+	)
+	(wire
+		(pts
+			(xy 190.50 95.25) (xy 190.50 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e8f4098-8b3d-5fb8-a0a1-2abd53007b44")
+	)
+	(label "ORP_IN"
+		(at 190.50 97.79 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "60c8db26-1672-5909-9b44-3903fad66455")
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 215.90 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d630f9aa-22b9-5bf8-941a-5db80330e217")
+		(property "Reference" "D2"
+			(at 219.71 88.90 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BAT54"
+			(at 219.71 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 219.71 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 219.71 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 219.71 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "84c7aeec-ed94-5f12-ab63-c1e975c38ba4")
+		)
+		(pin "2"
+			(uuid "cb42dea1-e064-51f4-8084-d8b67c4e3c32")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 212.09 91.44) (xy 209.55 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41636b31-3009-51ce-b05b-47e1b787068a")
+	)
+	(label "ORP_IN"
+		(at 209.55 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "81b83ebd-096f-5b8b-a8d1-3582e2ec0a36")
+	)
+	(wire
+		(pts
+			(xy 219.71 91.44) (xy 222.25 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b69df30-12cb-51f1-89b1-bf3c3dbf651e")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 222.25 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a74c1cd4-171c-5a91-8d72-09c50c63f649")
+		(property "Reference" "#PWR005"
+			(at 226.06 88.90 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 226.06 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 226.06 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 226.06 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "ca83bdd8-c607-5500-a7f9-652601b7872f")
+		)
+		(instances
+			(project "orp_frontend"
+				(path "/72ca4891-e139-4b64-aed1-0ba9e2e1eb95"
+					(reference "#PWR005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "AQOR ORP front-end test bench (simulation only; nothing here is on the board).\nMirrors hardware/orp_amp.kicad_sch: same refs and values for R1-R4, C14 and D2 (C10 is DNP there, so absent here);\nU201/U202 are U2 sections A/B (TL072HIDR; simulated with the TI SLOJ067 TL072 macromodel in models/).\nStimulus: V1/V2 stand in for +5V and the TPS60400 -5V rail (ideal);\nV3 + R100 are the ORP probe: an EMF behind 100 Mohm, on the BNC centre (J2 SIGNAL). SW2 open.\nORP_IN goes to the Nano's A0 (A1 pin 19), through R4.\nD2 is excluded from simulation: no BAT54 vendor model in models/ (the maker's page refused the download).\nChecks: expect.toml, run by check.py."
 		(exclude_from_sim yes)
 		(at 25.4 165.1 0)
 		(effects
@@ -3022,7 +3306,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "39a257dc-ee92-5fa1-8bb6-404233ddab36")
+		(uuid "c1301226-d06c-530a-abe7-cafe79b3809f")
 	)
 	(sheet_instances
 		(path "/"
